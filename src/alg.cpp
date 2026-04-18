@@ -3,7 +3,7 @@
 #include <map>
 #include "tstack.h"
 
-int getPr(char op) {
+int getPriority(char op) {
   switch (op) {
     case '(': return 0;
     case ')': return 1;
@@ -39,7 +39,7 @@ std::string infx2pstfx(const std::string& inf) {
       if (!stack.isEmpty()) stack.pop();
     } else if (ch == '+' || ch == '-' || ch == '*' || ch == '/') {
       while (!stack.isEmpty() &&
-             getPr(stack.get()) >= getPr(ch)) {
+             getPriority(stack.get()) >= getPriority(ch)) {
         output += stack.pop();
         output += ' ';
       }

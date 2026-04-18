@@ -37,7 +37,7 @@ std::string infx2pstfx(const std::string& inf) {
         output += ' ';
       }
       if (!stack.isEmpty()) stack.pop();
-    } else if (ch == '+'  ch == '-'  ch == '*' || ch == '/') {
+    } else if (ch == '+' || ch == '-' || ch == '*' || ch == '/') {
       while (!stack.isEmpty() &&
              getPr(stack.get()) >= getPr(ch)) {
         output += stack.pop();
@@ -73,7 +73,7 @@ int eval(const std::string& post) {
       }
       stack.push(num);
       --i;
-    } else if (ch == '+'  ch == '-'  ch == '*' || ch == '/') {
+    } else if (ch == '+' || ch == '-' || ch == '*' || ch == '/') {
       int right = stack.pop();
       int left = stack.pop();
       int result = 0;

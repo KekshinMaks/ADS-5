@@ -16,7 +16,7 @@ int getPr(char op) {
 }
 
 std::string infx2pstfx(const std::string& inf) {
-  TStack<char, 100> stack;
+  Tstack<char, 100> stack;
   std::string output;
 
   for (size_t i = 0; i < inf.length(); ++i) {
@@ -60,7 +60,7 @@ std::string infx2pstfx(const std::string& inf) {
 }
 
 int eval(const std::string& post) {
-  TStack<int, 100> stack;
+  Tstack<int, 100> stack;
 
   for (size_t i = 0; i < post.length(); ++i) {
     char ch = post[i];
